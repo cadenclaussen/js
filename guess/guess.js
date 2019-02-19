@@ -3,7 +3,7 @@ var input = require('readline-sync');
 
 
 // Generate the random number
-var randomNumber = random(25);
+var number = random(25);
 
 var guessCount = 0; // Initialize loop control variable
 while (guessCount < 6) { // Loop until
@@ -13,13 +13,12 @@ while (guessCount < 6) { // Loop until
     var guess = parseInt(guessString);
 
     // If the guess is correct, break the loop
-    if (guess === randomNumber) {
-        console.log('You are right!');
+    if (guess === number) {
         break;
     }
 
     // If the guess is too low/high, request a larger guess
-    if (guess > randomNumber) {
+    if (guess > number) {
         console.log('');
     } else {
         console.log('');
@@ -28,6 +27,15 @@ while (guessCount < 6) { // Loop until
     // Increment the loop control variable
     guessCount++;
 }
+
+if (guess === number) {
+    console.log('Good job!  You guessed my number in ' + guessCount + 1 + 'guesses.');
+}
+
+if (guess !== number) {
+    console.log('Sorry, my number was ' + number);
+}
+
 
 
 // UTILITY FUNCTIONS
