@@ -1,0 +1,22 @@
+{
+    "name": "js",
+    "version": "1.0.0",
+    "description": "js",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:cadenclaussen/js.git"
+    },
+    "dependencies": {
+        "debug": "^3.0.0",
+        "lodash": "^4.17.4",
+        "readline-sync": "^1.4.9",
+    },
+    "devDependencies": {
+        "eslint": "^5.12.0",
+        "glob": "^7.1.2"
+    },
+    "scripts": {},
+    "engines": {
+        "node": ">=8.6.0"
+    }
+}
