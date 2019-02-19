@@ -1,29 +1,32 @@
 'use strict';
 var input = require('readline-sync');
 
-var continuePlaying = true;
-while (continuePlaying === true) {
 
-    var randomNumber = random(25); // Generate a random number
+// Generate the random number
+var randomNumber = random(25);
 
-    var numberOfGuessses = 0; // Initialize loop control variable
-    while (numberOfGuessses < 6) { // Loop until
-        var guess = input.question('What is your guess [1-25]? ');
+var guessCount = 0; // Initialize loop control variable
+while (guessCount < 6) { // Loop until
 
-        // If the guess is correct, break the loop
-        // If the guess is too low, request a larger guess
-        // If the guess is too high, request a lower guess
+    // Get the player's guess, convert it to an int
+    var guessString = input.question('What is your guess [1-25]? ');
+    var guess = parseInt(guessString);
 
-        // Increment the loop control variable
-        numberOfGuessses++;
+    // If the guess is correct, break the loop
+    if (guess === randomNumber) {
+        console.log('You are right!');
+        break;
     }
 
-    // Once the game is over, determine whether to play
-    // again by asking the player.
-    var playAgain = input.question('Play again? [Y/n] ')
-    if (playAgain !== 'n') {
-        continuePlaying = true;
+    // If the guess is too low/high, request a larger guess
+    if (guess > randomNumber) {
+        console.log('');
+    } else {
+        console.log('');
     }
+
+    // Increment the loop control variable
+    guessCount++;
 }
 
 
